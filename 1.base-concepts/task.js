@@ -2,14 +2,14 @@
 
 function solveEquation(a, b, c) {
 	let arr = [];
-	let d = b ** 2 - 4 * a * c; // ищем d - дискриминант квадратного уравнения
+	let d = b ** 2 - 4 * a * c;
 
 	if (d < 0) {
 		arr = [];
 		console.log('Коэффициент не может быть равен нулю');
 	} else if (d === 0) {
 
-		let x1 = -b / (2 * a); // Корни будут воспадать, т.е. х1 = х2
+		let x1 = -b / (2 * a); 
 
 		arr.push(x1);
 	}
@@ -22,7 +22,7 @@ function solveEquation(a, b, c) {
 		arr.push(x1, x2);
 	}
 
-	return arr; // возвращаем массив 
+	return arr;
 
 }
 
