@@ -1,56 +1,19 @@
 "use strict"
 
 function solveEquation(a, b, c) {
-	let arr = [];
-	let d = b ** 2 - 4 * a * c;
+  let arr = [];
+  let x1;
+  let x2;
+  let d = b ** 2 - 4 * a * c;
 
-	if (d < 0) {
-		arr = [];
-		console.log('Коэффициент не может быть равен нулю');
-	} else if (d === 0) {
-
-		let x1 = -b / (2 * a); 
-
-		arr.push(x1);
-	}
-
-	if (d > 0) {
-
-		let x1 = (-b + Math.sqrt(d)) / (2 * a);
-		let x2 = (-b - Math.sqrt(d)) / (2 * a);
-
-		arr.push(x1, x2);
-	}
-
-	return arr;
-
-}
-
-// Задача 2
-
-function calculateTotalMortgage(percent, contribution, amount, countMonths) {
-
-	// Функция принимает аргументы (выше) и выдает сумму, которую в итоге заплатит клиент:
-	// (первоначальный взнос, погашение основного долга, % за пользование кредитом)
-
-	let monthlyPercent = percent / 100 / 12; // преобразовали годовой в месячный % (ставка) за пользование кредитом
-	let contribution; // первоначальный взнос
-	let amount; // сумма кредита
-	let countMonths; // срок кредита
-	let totalAmount; // общая сумма, кот. придется заплатить клиенту
-	let monthly; // ежемесячный платеж
-	let bodyCredit; // тело кредита
-
-	if (!isNaN(percent) && !isNaN(contribution) && !isNaN(amount)) {
-		const bodyCredit = amount - contribution;
-		// Посчитайте тело кредита — сумму, которую нужно вернуть банку (сумма кредита - первоначальный взнос).
-		const monthly = bodyCredit * (monthlyPercent + (monthlyPercent / (((1 + monthlyPercent) ** countMonths) - 1)));
-		const totalAmount = parseFloat((monthly * countMonths).toFixed(2)); // функция parseFloat возвращает число без точки.
-		return totalAmount;
-	}
-
-	return false;
-
-}
-
-
+  if (d > 0) {
+    x1 = (-b + Math.sqrt(d)) / (2 * a);
+    x2 = (-b - Math.sqrt(d)) / (2 * a);
+    arr.push(x1, x2);
+  } else if (d === 0) {
+    x1 = -b / (2 * a);
+    arr.push(x1);
+  }
+  return arr;
+  }
+  
