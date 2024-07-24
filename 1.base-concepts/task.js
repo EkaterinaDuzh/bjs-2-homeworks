@@ -10,7 +10,7 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
 	let bodyCredit;
 	if (!isNaN(percent) && !isNaN(contribution) && !isNaN(amount)) {
 		const bodyCredit = amount - contribution;
-		const monthly = bodyCredit * (monthPercent + (monthPercent / (((1 + monthPercent) ** countMonths) - 1)));
+		const month = bodyCredit * (monthPercent + (monthPercent / (((1 + monthPercent) ** countMonths) - 1)));
 		const totalAmount = parseFloat((month * countMonths).toFixed(2));
 		return totalAmount;
 	}
