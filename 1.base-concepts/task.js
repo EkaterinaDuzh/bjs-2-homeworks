@@ -24,9 +24,7 @@ function solveEquation(a, b, c) {
     let month;
     let bodyCredit;
 
-
-    if (!isNaN(percent) && !isNaN(contribution) && !isNaN(amount)) {
-      const bodyCredit = amount - contribution;
+    {const bodyCredit = amount - contribution;
       return parseFloat(((bodyCredit * (monthPercent + (monthPercent / (((1 + monthPercent) ** countMonths) - 1)))) * countMonths).toFixed(2));
     }
     return false;
